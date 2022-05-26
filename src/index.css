@@ -1,0 +1,57 @@
+@import "bulma/css/bulma.min.css";
+
+/* HELPERS
+---------------------------------------------------------------------- */
+.is-smooth {
+  border-radius: 6px;
+}
+.is-product-image {
+  height: 350px;
+  width: 400px;
+}
+.is-product-list-image {
+  height: 250px;
+  width: 300px;
+}
+.is-cart-image {
+  height: 60px;
+  width: 60px;
+  min-width: 60px;
+}
+.section-main {
+  min-height: 70vh;
+}
+.input-cart-quantity {
+  max-width: 70px;
+}
+.input-cart-price {
+  min-width: 70px;
+}
+
+/* LOADER
+---------------------------------------------------------------------- */
+.loader-holder {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .loader-holder svg {
+    animation: spin infinite 1s linear;
+    fill: hsl(171, 100%, 41%);
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
