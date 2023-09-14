@@ -10,6 +10,7 @@ import InventoryContext, { InventoryContextType } from '../context/inventory/Inv
 import Spinner from '../components/Spinner'
 import Modal from '../components/Modal'
 import utils from '../services/utils.service'
+import { InventoryData } from './../data/data'
 
 const ProductDetails = () => {
 
@@ -68,8 +69,8 @@ const ProductDetails = () => {
                 setLoading(true)
 
                 if (params.id) {
-                    const data = await inventoryService.getInventory(params.id)
-                    setInventory(data)
+                    // const data = await inventoryService.getInventory(params.id)
+                    setInventory(InventoryData[0])
                 } else {
                     throw new Error('Id is not provided')
                 }

@@ -8,7 +8,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import PageTitle from '../components/PageTitle'
 import InventoryContext, { InventoryContextType } from '../context/inventory/InventoryContext'
 import utils from '../services/utils.service'
-
+import { InventoryData } from './../data/data'
 
 const ProductList = () => {
 
@@ -20,9 +20,9 @@ const ProductList = () => {
             try {
                 setLoading(true)
 
-                const data = await inventoryService.getInventories()
+                // const data = await inventoryService.getInventories()
 
-                setInventories(data)
+                setInventories(InventoryData)
 
             } catch (error) {
                 console.log('Error Occurred', error);

@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
 })
 
 const getInventories = async () => {
-    const response = await axiosInstance.get('')
+    const response = await axiosInstance.get('', getConfig())
     if (response.status === 200) {
         return response.data as Inventory[]
     } else {
@@ -16,12 +16,20 @@ const getInventories = async () => {
 }
 
 const getInventory = async (id: string) => {
-    const response = await axiosInstance.get(`${id}`)
+    const response = await axiosInstance.get(`${id}`, getConfig())
     if (response.status === 200) {
         return response.data as Inventory
     } else {
         throw new Error(`[${response.status}]: ${response.statusText}`)
     }
+}
+
+const getConfig = () => {
+    return {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+    };
 }
 
 const service = {
